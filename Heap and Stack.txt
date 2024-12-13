@@ -1,0 +1,40 @@
+Heap Memory
+
+Definition: Heap memory is a region of memory used for dynamic memory allocation. It is managed by the programmer or garbage collector (in languages like Java or Python).
+
+Usage: Objects and data that need to persist beyond the scope of a single function or method are stored in the heap.
+
+Allocation and Deallocation: Memory is explicitly allocated (malloc in C, new in C++/Java) and deallocated (free in C, delete in C++). In managed languages, the garbage collector handles deallocation.
+
+Lifetime: Variables in the heap remain in memory until explicitly freed or garbage collected.
+
+Advantages:
+Large storage capacity.
+Flexibility for managing data with unknown size or dynamic resizing.
+
+Disadvantages:
+Slower access due to the need to traverse pointers.
+Potential for memory leaks if memory is not properly deallocated.
+
+
+
+
+Stack Memory
+
+Definition: Stack memory is a region of memory used for static memory allocation and execution of a program's functions, including local variables, function call details, and control flow.
+
+Usage: Stores local variables, function call information, and temporary data.
+
+Allocation and Deallocation: Memory is automatically allocated and deallocated when functions are called and returned.
+
+Lifetime: Variables in the stack are destroyed once the function or block scope ends.
+
+Advantages:
+Faster access due to sequential storage and automatic management.
+No risk of memory leaks.
+
+Disadvantages:
+Limited size (can cause stack overflow for deep recursion or large allocations).
+Less flexible as the size must be known at compile time.
+
+

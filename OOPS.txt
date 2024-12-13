@@ -1,0 +1,216 @@
+Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It 
+simplifies the software development and maintenance.
+
+Class is a user-defined data type which defines its properties and its functions. Class is the only 
+logical representation of the data. For example, Human being is a class. The body parts of a human 
+being are its properties, and the actions performed by the body parts are known as functions. The 
+class does not occupy any memory space till the time an object is instantiated. Functions inside 
+the classes are called methods.
+
+Object is a run-time entity. It is an instance of the class. An object can represent a person, place 
+or any other item. An object can operate on both data members and member functions. 
+An object of a class consist of data and methods.
+
+When an object is created using a new keyword, then space is allocated for the variable in a heap, 
+and the starting address is stored in the stack memory.
+
+‘this’ keyword :  ‘this’ keyword in Java that refers to the current instance of the class. 
+                In OOPS it is used to: 
+                    pass the current object as a parameter to another method 
+                    refer to the current class instance variable
+
+
+Constructor : Constructor is a special method which is invoked automatically at the time of object 
+creation. It is used to initialize the data members of new objects generally. 
+    #Constructors have the same name as class or structure. 
+    #Constructors don’t have a return type. (Not even void)
+    #Constructors are only called once, at object creation.
+
+There are three types of constructors:
+# Non Parameterized Constructor - It is the default constructor.
+# Parameterized Constructor -  It is used to provide different values to distinct objects.
+# Copy Constructor - This is used to make another object of the same values 
+
+eg. of Constructors:
+        class Student{
+            String name;
+            int age;
+
+            //default constructor
+            Student() {
+                System.out.println("Constructor called"); 
+            }
+
+            //Parameterized constructor
+            Student(String name, int age){
+                this.name =  name;
+                this.age = age;
+            }
+
+            //copy constructor
+            Student(Student s2){
+                this.name = s2.name;
+                this.age = s2.age;
+            }
+        }
+
+Unlike languages like C++, Java has no Destructor. Instead, Java has an efficient  garbage collector 
+that deallocates memory automatically.
+
+Destructors in C++ :
+
+        #include <iostream>
+        using namespace std;
+
+        class MyClass {
+        public:
+            MyClass() {
+                cout << "Constructor called." << endl;
+            }
+
+            ~MyClass() {
+                cout << "Destructor called." << endl;
+            }
+        };
+
+        int main() {
+            MyClass obj; // Constructor is called here
+            cout << "Inside main function." << endl;
+            return 0; // Destructor is automatically called here
+        }
+
+
+Four Pillars of OOPS:
+
+    #Encapsulation
+    Encapsulation is the process of combining data and functions into a single unit called class. In 
+    Encapsulation, the data is not accessed directly; it is accessed through the functions present 
+    inside the class. In simpler words, attributes of the class are kept private and public getter 
+    and setter methods are provided to manipulate these attributes. Thus, encapsulation makes the 
+    concept of data hiding possible.(Data hiding: a language feature to restrict access to members 
+    of an object, reducing the negative effect due to dependencies. e.g. "protected", "private" 
+    feature in Java). 
+
+
+
+    #Polymorphism
+    Polymorphism is the ability to present the same interface for differing underlying forms 
+    (data types). With polymorphism, each of these classes will have different underlying data. 
+    Precisely, Poly means ‘many’ and morphism means ‘forms’. 
+
+    There are two types of  Polymorphism:
+
+        * Compile-time Polymorphism
+        Compile-time Polymorphism is also known as static polymorphism. Method overloading is an 
+        example of compile-time polymorphism. overloading is a technique which allows you to have 
+        more than one function with the same function name but with different functionality. Method 
+        overloading can be possible on the following basis: 
+            1. The type of the parameters passed to the function. 
+            2. The number of parameters passed to the function.
+
+
+        * Run-time Polymorphism
+        Run-time polymorphism is also known as dynamic polymorphism. Function overriding is an example 
+        of run-time polymorphism. Function overriding means when the child class contains the method 
+        which is already present in the parent class. Hence, the child class overrides the method of 
+        the parent class. In case of function overriding, parent and child classes both contain the 
+        same function with a different definition. The call to the function is determined at run-time 
+        is known as run-time polymorphism.
+    
+
+
+    #Inheritance
+    Inheritance is a process in which one object acquires all the properties and behaviors of its 
+    parent object automatically. In such a way, you can reuse, extend or modify the attributes and 
+    behaviors which are defined in other classes. In Java, the class which inherits the members of 
+    another class is called derived class and the class whose members are inherited is called base 
+    class. The derived class is the specialized class for the base class. 
+
+    There are four types of inheritance:
+
+        * Single Inheritance : 
+        When one class inherits another class, it is known as single level inheritance
+        eg: shape -> triangle
+
+        * Hierarchial Inheritance :
+        Hierarchical inheritance is defined as the process of deriving more than one class from a base class. 
+        eg: shape -> triangle and shape -> square 
+
+        * Multilevel inheritance : 
+        Multilevel inheritance is a process of deriving a class from another derived class.
+        eg: shape -> triangle -> equilateral traingle
+
+        * Hybrid inheritance : 
+        Hybrid inheritance is a combination of simple, multiple inheritance and hierarchical inheritance. 
+
+
+
+    #Abstraction
+    In simple terms, it is hiding the unnecessary details & showing only the essential parts/functionalities to the user.
+    eg: users interact with high-level functions like read() or write() without needing to know how the actual block-level 
+        operations (e.g., locating sectors, managing file systems). 
+    
+    Abstraction is achieved in 2 ways :
+
+        * Abstract class :
+        An abstract class must be declared with an abstract keyword.
+        It can have abstract and non-abstract methods.
+        It cannot be instantiated.
+        It can have constructors and static methods also.
+        It can have final methods which will force the subclass not to change the body of the method.
+
+        An abstract class in Java serves as a blueprint for other classes. It can contain both abstract 
+        methods (methods without a body that must be implemented by subclasses) and concrete methods 
+        (methods with a body that can be inherited and used as-is). Abstract classes cannot be instantiated 
+        directly; they are meant to be extended by other classes.
+
+
+        * Interfaces (Pure Abstraction) :
+        All the fields in interfaces are public, static and final by default.
+        All methods are public & abstract by default.
+        A class that implements an interface must implement all the methods declared in the interface.
+        Interfaces support the functionality of multiple inheritance.
+
+        This is similar to abstract class but the thing is, you can only extend one class where as you can 
+        implement many interfaces. Also, you have to initialize all the fields with some value since all the 
+        fields are static inside the interface. This is why we use abstract class on cases where we dont need 
+        the static values for the fields.
+
+
+Static Keyword :
+    Static can be : 
+    Variable (also known as a class variable)
+    Method (also known as a class method)
+    Block
+    Nested class
+
+
+Access Modifiers in Java:
+
+    # Private: 
+    The access level of a private modifier is only within the class. It cannot be accessed from 
+    outside the class.
+
+    # Default: 
+    The access level of a default modifier is only within the package. It cannot be accessed 
+    from outside the package. If you do not specify any access level, it will be the default.
+
+    # Protected: 
+    The access level of a protected modifier is within the package and outside the package 
+    through child class. If you do not make the child class, it cannot be accessed from 
+    outside the package.
+
+    # Public: 
+    The access level of a public modifier is everywhere. It can be accessed from within the 
+    class, outside the class, within the package and outside the package.
+
+
+
+Virtual functions:
+This is used in C++ to ensure that the methods are overridden correctly. Suppose say we crated 
+an entity and it has a method called printname. If we create a subclass that extends entity and 
+call it say subentity. now create a method for subentity named printname which prints name+ "HI".  
+Now if we declare an subentity object and try to refer another entity object  = this subentity 
+object and try to use the printname function , it just prints the name even though the right side 
+of the assignment was subentity object. To avoid this we mark the entity class' printname function 
+as virtual. This would mean that it would automatically check which overridden function is called.
