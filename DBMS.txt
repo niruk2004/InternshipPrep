@@ -1,0 +1,20 @@
+Database: A database is a collection of related data which represents some aspect of the real
+          world.
+
+Database Management System (DBMS) is a software for storing and retrieving users' data while
+considering appropriate security measures. It consists of a group of programs which manipulate
+the database. The DBMS accepts the request for data from an application and instructs the
+operating system to provide the specific data.
+
+Database management systems were developed to handle the following difficulties of
+typical File-processing systems supported by conventional operating systems.
+1. Data redundancy and inconsistency
+2. Difficulty in accessing data
+3. Data isolation – multiple files and formats
+4. Integrity problems
+5. Atomicity of updates
+6. Concurrent access by multiple users
+7. Security problems
+
+ER diagram or Entity Relationship diagram is a graphical representation which shows the relationship 
+among the various entities as well as its attributes.
